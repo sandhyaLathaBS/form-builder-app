@@ -25,17 +25,21 @@
                     <thead>
                         <tr>
                             <th>sl no:</th>
-                            <th>Customer Name</th>
-                            <th>Customer Email</th>
-                            <th>Offer Percentage</th>
-                            <th>Offered By</th>
-                            <th>Start Date</th>
-                            <th>Created At</th>
-                            <th>Comments</th>
+                            <th>Form Name</th>
+                            <th>Input Feilds</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @if(!empty($forms)) <?php $i = 1; ?>
+                        @foreach($forms as $form)
+                        <tr>
+                            <td>{{$i++;}}</td>
+                            <td>{{$form->formName}}</td>
+                            <td>{{count($form->formQuestions)}}</td>
+                        </tr>
+                        @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>

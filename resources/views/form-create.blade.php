@@ -53,6 +53,10 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="x-content row shadow-lg">
             <div id="contentdiv_1" class="x-content-body">
+                <div class="form-group">
+                    <label for="usr">Form Name:</label>
+                    <input type="text" required class="form-control required-field" name="formName" id="formName">
+                </div><br>
                 <input type="hidden" name="QtnNo[]" value="1">
                 <h4>Question 1</h4>
                 <div class="form-group">
@@ -79,7 +83,7 @@
                         <div class="row options__" id="prop_option_q_1_1">
                             <div class="col-md-10">
                                 <input data-key-id="1" type=" text" class="form-control  required-field"
-                                    placeholder="Enter the Options" name="Option_q_1[]" id="Option_q_1_1">
+                                    placeholder="Enter the Options" name="Option[1][]" id="Option_q_1_1">
                             </div>
                             <div class="col-md-2 float-right">
                                 <button data-qtn-id="1" type="button" class="btn btn-info checkClick">+ add
@@ -166,8 +170,8 @@ function addNewOptions(qtnNo) {
             let inputHtml = ' <div class="row options__" id="prop_option_q_' + newInputId + '_' + qtnNo + '">';
             inputHtml += '<div class="col-md-10">';
             inputHtml += '<input data-key-id="' + newInputId +
-                '" type=" text" class="form-control  required-field" placeholder="Enter the Options" name="Option_q_' +
-                qtnNo + '[]" id="Option_q_' + newInputId + '_' + qtnNo +
+                '" type=" text" class="form-control  required-field" placeholder="Enter the Options" name="Option[' +
+                qtnNo + '][]' + '" id="Option_q_' + newInputId + '_' + qtnNo +
                 '">';
             inputHtml += '</div>   <div class="col-md-2 float-right">';
             inputHtml += '<button data-remove_id="' + newInputId + '_' + qtnNo +

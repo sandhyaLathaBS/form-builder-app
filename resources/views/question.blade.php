@@ -29,7 +29,7 @@
             <div class="row options__" id="prop_option_q_1_{{$nextQtnCount}}">
                 <div class="col-md-10">
                     <input data-key-id="1" type=" text" class="form-control  required-field"
-                        placeholder="Enter the Options" name="Option_q_{{$nextQtnCount}}[]"
+                        placeholder="Enter the Options" name="Option[{{$nextQtnCount}}][]"
                         id="Option_q_1_{{$nextQtnCount}}">
                 </div>
                 <div class="col-md-2 float-right">
