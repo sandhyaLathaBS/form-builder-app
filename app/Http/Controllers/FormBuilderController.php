@@ -10,11 +10,21 @@ use Illuminate\Http\Request;
 
 class FormBuilderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $data['input_types'] = InputFormTypes::get();
 
         return view('form-create', $data);
+    }
+
+    public function dashboard()
+    {
+        $data['forms'] = Forms::where('is_active', 1)->get();
+        return view('home', $data);
     }
 
     public function renderQuestion(Request $request)

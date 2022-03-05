@@ -13,4 +13,9 @@ class FormQuestions extends Model
     {
         return $this->hasMany(QuestionOptions::class, 'question_id', 'id')->where('is_active', 1);
     }
+
+    public function getTypeDetails()
+    {
+        return $this->hasOne(InputFormTypes::class, 'id', 'type');
+    }
 }

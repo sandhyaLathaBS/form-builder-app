@@ -11,9 +11,14 @@ class Text extends Component
      *
      * @return void
      */
-    public function __construct()
+    private $qtnDetails;
+    private $options;
+    private $choice;
+    public function __construct($Qtn, $choice, $options)
     {
-        //
+        $this->qtnDetails = $Qtn;
+        $this->options = $options;
+        $this->choice = $choice;
     }
 
     /**

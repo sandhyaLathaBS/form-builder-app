@@ -21,7 +21,7 @@
     <div class="container ">
         <div class="row">
             <div class="col-md-12">
-                <table id="datatable-list" class="table table-hover table-bordered ">
+                <table id="datatable-list" class="shadow-lg table table-hover table-bordered ">
                     <thead>
                         <tr>
                             <th>sl no:</th>
@@ -37,6 +37,12 @@
                             <td>{{$i++;}}</td>
                             <td>{{$form->formName}}</td>
                             <td>{{count($form->formQuestions)}}</td>
+                            <td>
+                                <a class="btn btn-info ">View</a>
+                                <a class="btn btn-success ">Edit</a>
+                                <a class="btn btn-warning ">Delete</a>
+
+                            </td>
                         </tr>
                         @endforeach
                         @endif

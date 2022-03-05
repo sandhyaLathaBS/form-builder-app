@@ -14,7 +14,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -22,9 +21,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+
+    public function forms()
     {
         $data['forms'] = Forms::where('is_active', 1)->get();
-        return view('home', $data);
+        return view('welcome', $data);
+    }
+
+    public function showForm($id)
+    {
+        $formId = base64_decode($id);
+        $data['form'] = Forms::where('id', $formId)->where('is_active', 1)->first();
+        return view('build', $data);
     }
 }
