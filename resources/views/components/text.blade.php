@@ -1,4 +1,4 @@
 <div class="form-group">
-    {{$qtnDetails}}
-    <label for=""></label>
+    <label for="">sfsd</label>
+    {{ $options }}
 </div>

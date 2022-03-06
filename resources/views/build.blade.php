@@ -10,12 +10,13 @@
             @foreach($qtns as $Qtn)
             <?php $type = $Qtn->getTypeDetails->component; ?>
             <?php $choice = $Qtn->getTypeDetails->choice; ?>
-            <?php $options = $Qtn->formQuestion_options; ?>
+            <?php $options[] = $Qtn->formQuestion_options; ?>
 
             <div class="row">
-                <?php $component = 'x-' + $type; ?>
-                <<?= $component ?> :Qtn="$Qtn" :choice="$choice" :options="$options">
-                    <<?= $component ?> />
+                @if($type == 'Text')
+                <!-- {{$Qtn}} -->
+                <x-Text :Qtn="$qtnDetails" :choice="$choice" :options="$options" />
+                @endif
             </div>
 
             @endforeach

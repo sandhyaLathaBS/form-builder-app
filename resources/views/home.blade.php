@@ -40,7 +40,8 @@
                             <td>
                                 <a class="btn btn-info ">View</a>
                                 <a class="btn btn-success ">Edit</a>
-                                <a class="btn btn-warning ">Delete</a>
+                                <a onclick="deleteThisForm('<?= base64_encode($form->formToken) ?>')"
+                                    class="btn btn-warning ">Delete</a>
 
                             </td>
                         </tr>
@@ -55,3 +56,23 @@
 
 
 @endsection
+
+@push('scripts')
+<script>
+function deleteThisForm(formToken) {
+    $.ajax({
+        url: "{{ route('delete.form') }}",
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: {
+            formToken: formToken
+        },
+        success: function(data) {
+            location.reload();
+        }
+    });
+}
+</script>
+@endpush

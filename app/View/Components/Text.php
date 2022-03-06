@@ -11,12 +11,12 @@ class Text extends Component
      *
      * @return void
      */
-    private $qtnDetails;
-    private $options;
-    private $choice;
-    public function __construct($Qtn, $choice, $options)
+    public $qtnDetails;
+    public $options;
+    public $choice;
+    public function __construct(array $qtnDetails = [],  int $choice = 0, array $options = [])
     {
-        $this->qtnDetails = $Qtn;
+        $this->qtnDetails = $qtnDetails;
         $this->options = $options;
         $this->choice = $choice;
     }
@@ -28,6 +28,7 @@ class Text extends Component
      */
     public function render()
     {
+        dd($this->qtnDetails);
         return view('components.text');
     }
 }

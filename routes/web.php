@@ -26,4 +26,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/create-new-form', [App\Http\Controllers\FormBuilderController::class, 'index'])->name('create-new-form');
     Route::post('/save-new-form', [App\Http\Controllers\FormBuilderController::class, 'save'])->name('create.save');
     Route::post('/render-question', [App\Http\Controllers\FormBuilderController::class, 'renderQuestion'])->name('render.question');
+    Route::post('/delete-form', [App\Http\Controllers\FormBuilderController::class, 'deleteForm'])->name('delete.form');
 });

@@ -81,4 +81,15 @@ class FormBuilderController extends Controller
         }
         return redirect('home');
     }
+
+    public function deleteForm(Request $request)
+    {
+        if ($request->formToken) {
+            if (Forms::where('formToken', $request->formToken)->exists()) {
+                Forms::where('formToken', $request->formToken)->delete();
+                FormQuestions::where('form_token', $request->formToken)->delete();
+                QuestionOptions::where('form_token', $request->formToken)->delete();
+            }
+        }
+    }
 }
