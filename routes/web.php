@@ -25,6 +25,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\FormBuilderController::class, 'dashboard'])->name('home');
     Route::get('/create-new-form', [App\Http\Controllers\FormBuilderController::class, 'index'])->name('create-new-form');
     Route::post('/save-new-form', [App\Http\Controllers\FormBuilderController::class, 'save'])->name('create.save');
+    Route::post('/edit-form', [App\Http\Controllers\FormBuilderController::class, 'update'])->name('edit.save');
     Route::post('/render-question', [App\Http\Controllers\FormBuilderController::class, 'renderQuestion'])->name('render.question');
     Route::post('/delete-form', [App\Http\Controllers\FormBuilderController::class, 'deleteForm'])->name('delete.form');
+    Route::get('/edit-this-form/{id}',  [App\Http\Controllers\FormBuilderController::class, 'editFormData_view']);
+    Route::get('/view-this-form/{id}',  [App\Http\Controllers\FormBuilderController::class, 'editFormData_view']);
 });

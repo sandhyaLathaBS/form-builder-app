@@ -38,8 +38,10 @@
                             <td>{{$form->formName}}</td>
                             <td>{{count($form->formQuestions)}}</td>
                             <td>
-                                <a class="btn btn-info ">View</a>
-                                <a class="btn btn-success ">Edit</a>
+                                <a class="btn btn-info "
+                                    href="{{url('/view-this-form')}}/<?= base64_encode($form->id) ?>">View</a>
+                                <a class="btn btn-success"
+                                    href="{{url('/edit-this-form')}}/<?= base64_encode($form->id) ?>">Edit</a>
                                 <a onclick="deleteThisForm('<?= base64_encode($form->formToken) ?>')"
                                     class="btn btn-warning ">Delete</a>
 
