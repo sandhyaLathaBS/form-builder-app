@@ -17,7 +17,7 @@ class CreateQuestionOptionsTable extends Migration
             $table->id();
             $table->integer('question_id');
             $table->string('option');
-            $table->string('formToken');
+            $table->string('form_token');
             $table->tinyInteger('is_active');
             $table->timestamps();
         });

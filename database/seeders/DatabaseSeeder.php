@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::create([
-        //     'name' => 'Admin',
-        //     'email' => 'admin@test.com',
-        //     'password' => bcrypt('password')
-        // ]);
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@test.com',
+            'password' => bcrypt('password')
+        ]);
 
         InputFormTypes::insert([
             ['field' => 'Text', 'type' => 'text', 'choice' => 0, 'component' => 'text'],
